@@ -1,0 +1,41 @@
+---
+title: "Homework 3"
+output: github_document
+---
+
+## Problem 1
+
+I will open a dataset called **instacart**
+```{r setup, echo=FALSE, message = FALSE}
+library(tidyverse)
+library(httr)
+library(jsonlite)
+library(p8105.datasets)
+data("instacart")
+```
+
+*About the data set*
+
+This data set provides buyer data of instacart. There are the following variabels: `r names(instacart)`. Further the number of columns in **instacart** is `r ncol(instacart)` and the number of observations is `r nrow(instacart)` This dataset could offer business insight to instacart and its advertisers, like the average hour of the day, which is `r mean(pull(instacart, order_hour_of_day))` (24 hour format).
+
+## Problem 2
+
+I will open a dataset called BRFSS
+```{r, echo = FALSE, message = FALSE}
+
+data("brfss_smart2010")
+
+```
+
+I will now format the data to use appropriate variable names and focus on the overhealth topic
+
+```{r}
+names(brfss_smart2010)
+
+
+```
+
+
+## Problem 3
+
+I will open a 
