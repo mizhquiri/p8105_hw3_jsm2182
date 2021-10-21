@@ -27,14 +27,45 @@ data("brfss_smart2010")
 
 ```
 
-I will now format the data to use appropriate variable names and focus on the overhealth topic
+I will now format the data to use appropriate variable names
+
+```{r, echo = FALSE, message = FALSE}
+
+brfss_smart2010 = 
+    janitor::clean_names(brfss_smart2010)
+
+```
 
 ```{r}
 names(brfss_smart2010)
 
+head(brfss_smart2010)
+```
+I will focus on the “Overall Health” topic
+
+```{r}
+
+brfss_smart2010 %>% 
+            mutate(response_order = recode(response, 
+                          "1" = "Excellent", 
+                          "2" = "Very good", 
+                          "3" = "Good",
+                          "4" = "Fair",
+                          "5" = "Poor"))%>%
+mutate(response_order =         as.factor(response_order)) %>% 
+  arrange(response_order)
+
 
 ```
 
+
+```{r}
+```
+
+
+```{r}
+
+```
 
 ## Problem 3
 
